@@ -1,0 +1,133 @@
+/*nav bar style*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 10px 20px;
+  }
+  .navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  }
+  
+  .navbar-logo {
+  color: black;
+  text-decoration: none;
+  }
+  
+  .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .navbar-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  }
+  
+  .navbar-link:hover {
+  text-decoration: underline;
+  } 
+/* Background and wrapper */
+.donate-page {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-blood-donation-poster-board-background-material-image_163689.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .donate-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Title */
+  .donate-wrapper h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  
+  /* Form styling */
+  .input-box {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-box label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .donate-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .donate-input:focus {
+    border-color: #d32f2f;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.5);
+  }
+  
+  /* Button styling */
+  .donate-button {
+    background-color: #d32f2f;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .donate-button:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(183, 28, 28, 0.3);
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .donate-wrapper {
+      padding: 20px 30px;
+    }
+  
+    .donate-wrapper h2 {
+      font-size: 1.8rem;
+    }
+  
+    .donate-input {
+      font-size: 0.9rem;
+    }
+  
+    .donate-button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
