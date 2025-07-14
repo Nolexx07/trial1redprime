@@ -1,0 +1,152 @@
+/* General Page Styling */
+.scan-container {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Cyan to deep blue gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  /* Title Styling */
+  .scan-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .scan-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Scan Button */
+  .scan-button {
+    background: #ff7f50; /* Coral color */
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .scan-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .scan-button:hover:not(:disabled) {
+    transform: scale(1.05);
+    background: #e66b3f; /* Slightly darker coral */
+  }
+  
+  /* Donor List Container */
+  .donor-list {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Donor Title */
+  .donor-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f9d342; /* Golden yellow for emphasis */
+  }
+  
+  /* Donor Item Styling */
+  .donor-item {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .donor-item:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter on hover */
+  }
+  
+  /* Donor Details */
+  .donor-item p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #ffffff;
+  }
+  
+  .donor-item strong {
+    color: #ffdd57; /* Bright yellow for emphasis */
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .alert-button,
+  .details-button {
+    background: #4caf50; /* Green for buttons */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .alert-button:hover {
+    background: #45a049; /* Slightly darker green */
+  }
+  
+  .details-button {
+    background: #2196f3; /* Blue for details button */
+  }
+  
+  .details-button:hover {
+    background: #1e88e5; /* Slightly darker blue */
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .scan-title {
+      font-size: 2.5rem;
+    }
+  
+    .donor-title {
+      font-size: 1.5rem;
+    }
+  
+    .donor-item p {
+      font-size: 1rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

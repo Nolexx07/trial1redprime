@@ -1,0 +1,215 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: url(https://i.pinimg.com/originals/19/3f/90/193f90e11001f3f4a5ff8c8073ec8f02.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Ensure background stays fixed */
+}
+
+#donor-registration-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center container vertically */
+  position: relative;
+  padding: 20px; /* Padding for better responsiveness */
+}
+
+#donor-registration-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 30px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand .navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.navbar-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+/* Registration Container */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  margin: 0 auto; /* Center container horizontally */
+  position: relative;
+  z-index: 1;
+  margin-top: 100px; /* Ensure there's enough top margin to prevent overlap with navbar */
+}
+
+/* Registration Title */
+.registration-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ff4d4d;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  position: relative;
+  z-index: 1; /* Ensure the title stays on top */
+}
+
+/* Form Styling */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.registration-form input,
+.registration-form textarea,
+.registration-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+.registration-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.registration-form input[type="file"] {
+  padding: 5px;
+  background: none;
+}
+
+.registration-form select {
+  cursor: pointer;
+}
+
+.registration-form input:focus,
+.registration-form textarea:focus,
+.registration-form select:focus {
+  border: 2px solid #ff4d4d;
+}
+
+.submit-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e03c3c;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .registration-title {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  .registration-container {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 120px; /* More margin for smaller screens */
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    font-size: 14px;
+  }
+
+  .registration-title {
+    font-size: 20px;
+  }
+
+  .registration-container {
+    padding: 10px 15px;
+  }
+}

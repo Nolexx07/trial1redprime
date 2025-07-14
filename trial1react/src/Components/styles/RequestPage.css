@@ -1,0 +1,114 @@
+/* Outer container */
+.request-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("https://www.shutterstock.com/shutterstock/videos/1071229501/thumb/12.jpg?ip=x480");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  position: relative;
+  padding-top: 100px;
+}
+
+/* Main box */
+.request-main {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Ensuring content is above the background */
+}
+
+/* Form elements */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button.request-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e63946;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.request-button:hover {
+  background-color: #d62828;
+}
+
+/* Account link */
+.request-account {
+  margin-top: 15px;
+}
+
+.request-account a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.request-account a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (tablets and below) */
+@media (max-width: 768px) {
+  .request-main {
+    padding: 20px 30px; /* Reduced padding for smaller screens */
+  }
+
+  button.request-button {
+    font-size: 14px; /* Adjusted button text size for smaller screens */
+    padding: 10px;
+  }
+
+  label, input, select {
+    font-size: 14px; /* Adjusted font size for better readability on mobile */
+  }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+  .request-main {
+    padding: 15px 20px; /* Further reduced padding for mobile devices */
+  }
+
+  button.request-button {
+    font-size: 14px; /* Smaller button text */
+    padding: 10px;
+  }
+
+  label, input, select {
+    font-size: 13px; /* Even smaller font for mobile screens */
+  }
+
+  .request-account a {
+    font-size: 14px; /* Adjusted account link font size */
+  }
+}

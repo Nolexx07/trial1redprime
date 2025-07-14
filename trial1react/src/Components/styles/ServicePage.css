@@ -1,0 +1,132 @@
+/* ServicePage.css */
+.servicepage-container {
+  background-image: url(https://img.pikbest.com/backgrounds/20220119/public-welfare-love-blood-donation-gradient-simple-background_6243923.jpg!sw800);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+.servicepage-navbar {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.servicepage-logo {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.servicepage-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.servicepage-menu li {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.servicepage-menu li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.servicepage-menu li a:hover {
+  color: #ff6f61;
+}
+
+.servicepage-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #004f85;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.servicepage-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center; /* Centers the list vertically */
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.servicepage-item {
+  background-color: transparent;
+  margin: 40px;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 10px;
+  border-right: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicepage-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translate(-10px, -10px);
+}
+
+.servicepage-item h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.servicepage-item p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.servicepage-item button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.servicepage-item button:hover {
+  background-color: #ff6f61;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .servicepage-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .servicepage-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
