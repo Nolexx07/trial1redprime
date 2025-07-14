@@ -1,0 +1,71 @@
+/* Container for the entire page */
+.search-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://imgs.search.brave.com/Cm3zqpIYEKVXLD99CvHY1VDARK5bpLY916evI0XwMas/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jMS53/YWxscGFwZXJmbGFy/ZS5jb20vcHJldmll/dy8yODkvOTMvMzIw/L2Jsb29kLWJsb29k/LWRvbmF0aW9uLWhl/YWx0aC1kb25hdGlv/bi5qcGc');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Centered form box */
+  .search-wrapper {
+    width: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Form title */
+  .search-title {
+    color: #ff4d4d;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Label styling */
+  .input-box label {
+    display: block;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Select dropdown styling */
+  .input-box select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  /* Search button styling */
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  

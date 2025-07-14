@@ -1,9 +1,29 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
     "postcss": "^8.5.1",
     "tailwindcss": "^4.0.0",
     "web-vitals": "^4.2.4"
+=======
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "nodemon": "^3.1.9"
+>>>>>>> e0c16d3bbb5900eb28b835b51dfccf71432ba9c2
   }
 }

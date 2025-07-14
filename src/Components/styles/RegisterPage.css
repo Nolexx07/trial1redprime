@@ -1,0 +1,119 @@
+/* Scoped styles for RegisterPage */
+
+/* Outer box for registration */
+.register-box {
+  background-image: url(https://www.teamhealth.com/wp-content/uploads/2022/06/TH-13654-World-Blood-Donor-Day-Social-Graphics_ForApproval_Blog.jpg);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: auto; /* To allow scrolling if content overflows */
+}
+
+/* Registration form container */
+.register-form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Title */
+.register-form-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}
+
+/* Form structure */
+.register-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.register-form-container input,
+.register-form-container select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.register-form-container input:focus,
+.register-form-container select:focus {
+  border-color: #ff6b6b;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(255, 107, 107, 0.5);
+}
+
+/* Submit button */
+.register-form-container .register-submit {
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.register-form-container .register-submit:hover {
+  background-color: #e74c3c;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 10px rgba(231, 76, 60, 0.4);
+}
+
+/* Link styling */
+.register-form-container .register-link {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.register-form-container .register-link a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.register-form-container .register-link a:hover {
+  color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-form-container h1 {
+    font-size: 2rem;
+  }
+
+  .register-form-container input,
+  .register-form-container select {
+    font-size: 0.9rem;
+  }
+
+  .register-form-container .register-submit {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
