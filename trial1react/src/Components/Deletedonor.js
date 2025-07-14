@@ -2,12 +2,32 @@ import { Link } from "react-router-dom";
 import "./styles/Deletedonor.css";
 
 function DonatePage() {
-  const handleDelete = (e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
     const name = e.target.name1.value;
     const email = e.target.email.value;
-    // Perform the delete action (e.g., make a request to a backend API)
-    console.log("Delete Request Sent for:", { name, email });
+    try {
+      // Fetch all donors to find the matching donor by name and email
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
+      const donors = await response.json();
+      const donor = donors.find(d => d.name === name && d.email === email);
+      if (!donor) {
+        alert("No donor found with the provided name and email.");
+        return;
+      }
+      // Delete the donor by ID
+      const deleteResponse = await fetch(`${process.env.REACT_APP_API_URL}/donors/${donor._id}`, {
+        method: 'DELETE',
+      });
+      if (deleteResponse.ok) {
+        alert("Donor deleted successfully.");
+      } else {
+        alert("Failed to delete donor.");
+      }
+    } catch (error) {
+      console.error("Error deleting donor:", error);
+      alert("An error occurred while deleting the donor.");
+    }
   };
 
   return (

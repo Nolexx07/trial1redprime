@@ -8,7 +8,7 @@ const RequestHistory = () => {
   useEffect(() => {
     // Fetching request history data (this is just an example)
     const fetchRequests = async () => {
-      const response = await fetch('/api/requests'); // Replace with your actual API endpoint
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/requests`); // Use backend URL
       const data = await response.json();
       setRequests(data);
     };

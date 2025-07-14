@@ -5,78 +5,25 @@ import "./styles/ScanDonorsPage.css";
 function ScanDonorsPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const bloodGroup = location.state?.bloodGroup || "Not Specified";
+  const bloodGroup = location.state?.bloodGroup || "";
 
   const [scanning, setScanning] = useState(false);
   const [donorsFound, setDonorsFound] = useState([]);
 
-  const handleScan = () => {
+  const handleScan = async () => {
     setScanning(true);
-
-    // Simulate API call to fetch nearby donors
-    setTimeout(() => {
-      const donors = [
-        {
-          id: "D001",
-          name: "John Doe",
-          bloodGroup,
-          location: "1.2km away",
-          mobile: "+1234567890",
-          age: 29,
-          healthHistory: "No known conditions",
-          vitalSigns: "Normal",
-          detailedInfo: {
-            tobaccoUse: "None",
-            drugUse: "None",
-            medicalHistory: "No chronic illnesses",
-            mentalHealth: "Stable",
-            socialSupport: "Strong family support",
-            financialSituation: "Stable",
-            risksAndBenefits: "Low risks",
-          },
-        },
-        {
-          id: "D002",
-          name: "Jane Smith",
-          bloodGroup,
-          location: "2.3km away",
-          mobile: "+9876543210",
-          age: 34,
-          healthHistory: "Allergic to penicillin",
-          vitalSigns: "Normal",
-          detailedInfo: {
-            tobaccoUse: "Occasional",
-            drugUse: "None",
-            medicalHistory: "Mild allergies",
-            mentalHealth: "Stable",
-            socialSupport: "Moderate",
-            financialSituation: "Stable",
-            risksAndBenefits: "Low risks",
-          },
-        },
-        {
-          id: "D003",
-          name: "Sam Wilson",
-          bloodGroup,
-          location: "3.5km away",
-          mobile: "+1122334455",
-          age: 27,
-          healthHistory: "History of asthma",
-          vitalSigns: "Stable",
-          detailedInfo: {
-            tobaccoUse: "None",
-            drugUse: "None",
-            medicalHistory: "Asthma (under control)",
-            mentalHealth: "Stable",
-            socialSupport: "Strong family support",
-            financialSituation: "Stable",
-            risksAndBenefits: "Moderate risks",
-          },
-        },
-      ];
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
+      let donors = await response.json();
+      if (bloodGroup) {
+        donors = donors.filter(donor => donor.bloodgroup === bloodGroup);
+      }
       setDonorsFound(donors);
-      setScanning(false);
-    }, 3000);
+    } catch (error) {
+      console.error("Error fetching donors:", error);
+      setDonorsFound([]);
+    }
+    setScanning(false);
   };
 
   const viewDetails = (donor) => {
@@ -117,15 +64,12 @@ function ScanDonorsPage() {
           <h2 className="donor-title">Nearby Donors Found:</h2>
           <ul>
             {donorsFound.map((donor) => (
-              <li key={donor.id} className="donor-item">
-                <p><strong>ID:</strong> {donor.id}</p>
+              <li key={donor._id} className="donor-item">
                 <p><strong>Name:</strong> {donor.name}</p>
-                <p><strong>Blood Group:</strong> {donor.bloodGroup}</p>
-                <p><strong>Location:</strong> {donor.location}</p>
-                <p><strong>Mobile:</strong> {donor.mobile}</p>
-                <p><strong>Age:</strong> {donor.age}</p>
-                <p><strong>Health History:</strong> {donor.healthHistory}</p>
-                <p><strong>Vital Signs:</strong> {donor.vitalSigns}</p>
+                <p><strong>Blood Group:</strong> {donor.bloodgroup}</p>
+                <p><strong>Contact:</strong> {donor.Contact}</p>
+                <p><strong>Gender:</strong> {donor.gender}</p>
+                <p><strong>Email:</strong> {donor.email}</p>
                 <div className="button-group">
                   <button
                     className="alert-button"

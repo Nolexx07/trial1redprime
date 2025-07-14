@@ -49,6 +49,26 @@ app.post('/register', (req, res) =>{
     .catch(err => res.json(err))
 })
 
+// Get all donors
+app.get('/donors', (req, res) => {
+    EmployeeModel.find()
+    .then(donors => res.json(donors))
+    .catch(err => res.status(500).json({ error: err.message }));
+});
+
+// Delete donor by ID
+app.delete('/donors/:id', (req, res) => {
+    EmployeeModel.findByIdAndDelete(req.params.id)
+    .then(result => {
+        if (result) {
+            res.json({ message: 'Donor deleted successfully' });
+        } else {
+            res.status(404).json({ error: 'Donor not found' });
+        }
+    })
+    .catch(err => res.status(500).json({ error: err.message }));
+});
+
 app.listen(3001, () => {
     console.log("server is running")
 })

@@ -19,9 +19,20 @@ function RequestBlood() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Mock service call
-    console.log("Form submitted: ", formData);
-    alert("Blood request submitted successfully!");
+    fetch(`${process.env.REACT_APP_API_URL}/request`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        alert("Blood request submitted successfully!");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Request Failed!");
+      });
   };
 
   return (

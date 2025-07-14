@@ -23,7 +23,7 @@ function DonorRegistration() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Replace the URL below with your service endpoint
-    fetch("https://your-service-url.com/register", {
+    fetch(`${process.env.REACT_APP_API_URL}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
