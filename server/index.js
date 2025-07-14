@@ -14,7 +14,8 @@ app.use(cors({
     "http://localhost:3001",
     "http://localhost:3002",
     "http://localhost:3003",
-    "https://redprime-frontend.onrender.com"
+    "https://redprime-frontend.onrender.com",
+    "https://redprime.onrender.com"
   ],
   credentials: true,
 }));
