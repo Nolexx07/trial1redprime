@@ -15,7 +15,7 @@ function RegisterPage() {
 
     const handleSubmit = (e) => {
       e.preventDefault()
-      axios.post('http://localhost:3001/register', {name, email, password, Contact, bloodgroup, gender})
+      axios.post(`${process.env.REACT_APP_API_URL}/register`, {name, email, password, Contact, bloodgroup, gender})
       .then(result => {console.log(result)
         navigate('/')
       })

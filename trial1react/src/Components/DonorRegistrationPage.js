@@ -23,7 +23,7 @@ function DonorRegistrationPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/Donorformdetails', {name,bloodGroup, email, password, age,mobile,location,healthHistory,tobaccoUse,drugUse,mentalHealth,socialSupport,financialSituation,riskAndBenefits})
+    axios.post(`${process.env.REACT_APP_API_URL}/Donorformdetails`, {name,bloodGroup, email, password, age,mobile,location,healthHistory,tobaccoUse,drugUse,mentalHealth,socialSupport,financialSituation,riskAndBenefits})
     .then(result => {console.log(result)
       navigate('/donor-dashboard')
     })
