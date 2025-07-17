@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import EmployeeModel from "./models/Employee.js";
 import dotenv from 'dotenv';
+import nodemailer from "nodemailer";
 dotenv.config();
 
 
@@ -67,6 +68,37 @@ app.delete('/donors/:id', (req, res) => {
         }
     })
     .catch(err => res.status(500).json({ error: err.message }));
+});
+
+// Email alert endpoint
+app.post('/send-alert', async (req, res) => {
+  const { email, name, bloodgroup } = req.body;
+  if (!email || !name || !bloodgroup) {
+    return res.status(400).json({ error: 'Email, name, and blood group are required.' });
+  }
+  try {
+    // Configure transporter (using Gmail for example)
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.ALERT_EMAIL_USER,
+        pass: process.env.ALERT_EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.ALERT_EMAIL_USER,
+      to: email,
+      subject: 'RedPrime: Urgent Blood Needed',
+      text: `${name}, we need urgent blood. Blood group: ${bloodgroup}.`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    res.json({ message: 'Alert email sent successfully.' });
+  } catch (error) {
+    console.error('Error sending alert email:', error);
+    res.status(500).json({ error: 'Failed to send alert email.' });
+  }
 });
 
 app.listen(3001, () => {

@@ -150,3 +150,214 @@
     }
   }
   
+/* Hero Section */
+.scan-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.scan-hero-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* Spinner */
+.scan-spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-top: 3px solid #ff7f50;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.scan-loading-msg {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #f9d342;
+  font-weight: bold;
+}
+
+/* Donor List Grid */
+.donor-list-grid {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px 30px 30px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.donor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* Donor Card */
+.donor-card {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.13);
+  padding: 18px 16px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: fadeInUp 0.7s;
+}
+.donor-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.28);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.donor-avatar {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #ff7f50 60%, #f9d342 100%);
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  border: 3px solid #fff3;
+}
+
+.donor-info {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.donor-info p {
+  margin: 3px 0;
+  color: #fff;
+  font-size: 1.08rem;
+}
+.donor-info strong {
+  color: #ffdd57;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+.alert-button,
+.details-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.13);
+  transition: all 0.2s;
+}
+.alert-button:hover {
+  background: #45a049;
+}
+.details-button {
+  background: #2196f3;
+}
+.details-button:hover {
+  background: #1e88e5;
+}
+
+/* Empty State */
+.empty-state {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  opacity: 0.85;
+}
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .donor-list-grid {
+    padding: 12px 4px 18px 4px;
+  }
+  .donor-grid {
+    gap: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .scan-title {
+    font-size: 2.5rem;
+  }
+  .donor-title {
+    font-size: 1.5rem;
+  }
+  .donor-info p {
+    font-size: 1rem;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .donor-card {
+    padding: 12px 6px 10px 6px;
+  }
+}
+
+.alert-status-popup {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #323232;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  z-index: 9999;
+  opacity: 0.97;
+  animation: fadeInOut 4s;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  10% { opacity: 1; transform: translateX(-50%) scale(1); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+}
+  

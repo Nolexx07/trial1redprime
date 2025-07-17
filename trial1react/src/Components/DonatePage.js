@@ -138,7 +138,23 @@ function DonorRegistration() {
               </option>
               <option value="Meerpet">Meerpet</option>
               <option value="Ameerpet">Ameerpet</option>
-              {/* Add more locations as needed */}
+              <option value="Secunderabad">Secunderabad</option>
+              <option value="Banjara Hills">Banjara Hills</option>
+              <option value="Jubilee Hills">Jubilee Hills</option>
+              <option value="Madhapur">Madhapur</option>
+              <option value="Gachibowli">Gachibowli</option>
+              <option value="Kukatpally">Kukatpally</option>
+              <option value="Dilsukhnagar">Dilsukhnagar</option>
+              <option value="LB Nagar">LB Nagar</option>
+              <option value="Begumpet">Begumpet</option>
+              <option value="Hitech City">Hitech City</option>
+              <option value="Miyapur">Miyapur</option>
+              <option value="Uppal">Uppal</option>
+              <option value="Kompally">Kompally</option>
+              <option value="Attapur">Attapur</option>
+              <option value="Tarnaka">Tarnaka</option>
+              <option value="Somajiguda">Somajiguda</option>
+              <option value="Other">Other</option>
             </select>
 
             <label htmlFor="gender">Gender:</label>
