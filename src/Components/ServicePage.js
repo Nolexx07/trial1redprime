@@ -15,7 +15,7 @@ function ServicePage() {
         <ul className="servicepage-menu">
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/help">Help</Link></li>
-          <li><Link to="/">Log out</Link></li>
+          <li><Link to="/login">Log out</Link></li>
         </ul>
       </div>
       <h1 className="servicepage-title">Explore Our Services</h1>
@@ -36,3 +36,4 @@ function ServicePage() {
 }
 
 export default ServicePage;
+
