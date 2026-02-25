@@ -17,7 +17,7 @@ function RegisterPage() {
       e.preventDefault()
       axios.post(`${process.env.REACT_APP_API_URL}/register`, {name, email, password, Contact, bloodgroup, gender})
       .then(result => {console.log(result)
-        navigate('/')
+        navigate('/login')
       })
       .catch(err=> console.log(err))
     }
@@ -107,7 +107,7 @@ function RegisterPage() {
           </button>
 
           <div className="register-link">
-            Already have an account? <Link to="/">Login here</Link>
+            Already have an account? <Link to="/login">Login here</Link>
           </div>
         </form>
       </div>
