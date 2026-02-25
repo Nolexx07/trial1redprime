@@ -14,7 +14,7 @@ function ContactPage() {
           <ul>
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/service">Service</Link></li>
-            <li><Link to="/">Log out</Link></li>
+            <li><Link to="/login">Log out</Link></li>
           </ul>
         </div>
       </div>
@@ -59,3 +59,4 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
